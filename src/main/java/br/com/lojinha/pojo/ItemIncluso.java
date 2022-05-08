@@ -3,7 +3,7 @@ package br.com.lojinha.pojo;
 import br.com.lojinha.enums.NomeItemAdicional;
 
 public class ItemIncluso {
-    //public  List<Integer> quantidade = Arrays.asList(0, 1, 2, 3, 4, 5, 6, 7, 8, 9);
+
     private int quantidade;
     private NomeItemAdicional nome;
 

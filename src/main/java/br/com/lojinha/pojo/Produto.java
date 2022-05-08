@@ -6,19 +6,16 @@ import java.util.List;
 
 //classe para representar os produtos da lojinha - Receita
 public class Produto {
+
     //atributos - aspectos dos produtos - está logo abaixo da classe (raiz da classe) e não do metodo (que seria uma variavel)
     private String nome;
     private String marca;
     private double valor;
-
     //private String tamanho;
     private Tamanho tamanho; //passando a variável de tipo string para tipo enum Tamanho
-
     //private String itensInclusos;
     //private List<String> itensInclusos; //Como criar uma lista de Strings
     private List<ItemIncluso> itensInclusos;//criando uma lista de ItemIncluso. Não houve importação pois as classes estão no mesmo package
-
-
 
 
     //construtor é muito similar a um metodo...é um grupo de acoes que vai acontecer logo que se cira o objeto (instanciacao "new")
