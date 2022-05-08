@@ -3,7 +3,7 @@ package br.com.lojinha;
 
 import br.com.lojinha.enums.NomeItemAdicional;
 import br.com.lojinha.enums.Tamanho;
-import br.com.lojinha.pojo.ItensInclusos;
+import br.com.lojinha.pojo.ItemIncluso;
 import br.com.lojinha.pojo.Produto;
 
 import java.util.ArrayList;
@@ -14,13 +14,14 @@ public class LojinhaApp {
 
     //metodo principal psvm
     public static void main(String[] args){
-        Produto meuProduto = new Produto("XPTO", Tamanho.GRANDE);//como criei um construtor para marca e ele está aguadando a marca inicial, então eu passo o paramentro no momento da instanciacao
-        ItensInclusos itemIncluso = new ItensInclusos();
+        Produto meuProduto = new Produto("JVL", Tamanho.GRANDE);//como criei um construtor para marca e ele está aguadando a marca inicial, então eu passo o paramentro no momento da instanciacao
+        //ItemIncluso itemIncluso = new ItemIncluso();
 
 
 
         System.out.println(meuProduto.getMarca());//print só pra mostrar que o construtor ja inicia o objeto com a marca xpto
         System.out.println(meuProduto.getTamanho());
+
 
         meuProduto.setNome("Play Station 5");
         //meuProduto.valor = 0; //sem encapsulamento
@@ -36,27 +37,48 @@ public class LojinhaApp {
 
         //meuProduto.setItensInclusos("2 controles e 3 jogos");
         //criando uma variavel do tipo list String chamada itensInclusos
-        List<String> itensInclusos = new ArrayList<>();//aqui ainda vazia
-        itensInclusos.add("2 controles");//adicionando itens na lista...item 0
-        itensInclusos.add("3 jogos");//item 1
-        itensInclusos.add("2 cabos de energia");//item 2
-        meuProduto.setItensInclusos(itensInclusos); //agora temos que passar uma lista de strings
-
-        //System.out.println(itemIncluso.quantidade.get(0));
-        //itemIncluso.setQtyAdicional();
-        itemIncluso.setQtyeItemAdicional(1, NomeItemAdicional.CONTROLES);
-        System.out.print(itemIncluso.getQty() + " ");
-        System.out.println(itemIncluso.getItemAdicional());
+        //List<String> itensInclusos = new ArrayList<>();//aqui ainda vazia
+        //itensInclusos.add("2 controles");//adicionando itens na lista...item 0
+        //itensInclusos.add("3 jogos");//item 1
+        //itensInclusos.add("2 cabos de energia");//item 2
+        //meuProduto.setItensInclusos(itensInclusos); //agora temos que passar uma lista de strings
 
 
+        //Exercicios Práticos Modulo 6...minha resposta
+        //itemIncluso.setQtyeItemAdicional(1, NomeItemAdicional.CONTROLES);
+        //System.out.print(itemIncluso.getQuantidade() + " ");
+        //System.out.println(itemIncluso.getNome());
+
+
+        //Exercicios Práticos Modulo 6...resposta do Julio
+        //criando uma variavel do tipo list ItemIncluso chamada itensInclusos
+        List<ItemIncluso> itensInclusos = new ArrayList<>();//lista de itensInclusos do tipo ItemIncluso aqui ainda vazia
+
+        ItemIncluso primeiroItemAdicional = new ItemIncluso(2, NomeItemAdicional.CONTROLES);//antes de adicionar, preciso criar os itens...então criando um objeto pra ItemIncluso que ainda está vazio
+        //primeiroItemAdicional.setQtyeItemAdicional(2, NomeItemAdicional.CONTROLES);
+        itensInclusos.add(primeiroItemAdicional);//adicionando o primeiroItemAdicional na lista itensInclusos...item 0
+
+        ItemIncluso segundoItemAdicional = new ItemIncluso(3, NomeItemAdicional.JOGOS);//novamente antes de adicionar, preciso criar os itens...então criando um objeto pra ItemIncluso que ainda está vazio
+        //segundoItemAdicional.setQtyeItemAdicional(3, NomeItemAdicional.JOGOS);
+        itensInclusos.add(segundoItemAdicional);//adicionando o segundoItemAdicional na lista itensInclusos...item 1
+
+        ItemIncluso terceiroItemAdicional = new ItemIncluso(2, NomeItemAdicional.CABOS_DE_ENERGIA);//novamente...
+        //terceiroItemAdicional.setQtyeItemAdicional(2, NomeItemAdicional.CABOS_DE_ENERGIA);
+        itensInclusos.add(terceiroItemAdicional);//adicionando o terceiroItemAdicional na lista itensInclusos...item 2
+
+        System.out.println(itensInclusos);
+
+        meuProduto.setItensInclusos(itensInclusos);//agora a lista de itensInclusos foi enviada pra dentro do produto
+        System.out.println(meuProduto.getItensInclusos().toString());
 
 
 
-        System.out.println(meuProduto.getItensInclusos().get(1));//pegando um item especifico da lista
+
+        //System.out.println(meuProduto.getItensInclusos().get(1));//pegando um item especifico da lista
         //System.out.println(meuProduto.getItensInclusos().size());
 
-        System.out.println(meuProduto.getNome());// não apresenta as caracteristicas...pois ele eh um objeto
-        System.out.println(meuProduto.getValor());// aqui sim imprime o nome
+        System.out.println(meuProduto.getNome());// não apresenta as caracteristicas...pois ele eh um objeto?
+        System.out.println(meuProduto.getValor());// aqui sim imprime o nome?
         System.out.println(meuProduto.getMarca());
         System.out.println(meuProduto.getTamanho());
 

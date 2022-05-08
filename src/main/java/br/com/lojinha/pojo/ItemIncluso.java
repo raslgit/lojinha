@@ -2,26 +2,30 @@ package br.com.lojinha.pojo;
 
 import br.com.lojinha.enums.NomeItemAdicional;
 
-import java.util.Arrays;
-import java.util.List;
-
-public class ItensInclusos {
+public class ItemIncluso {
     //public  List<Integer> quantidade = Arrays.asList(0, 1, 2, 3, 4, 5, 6, 7, 8, 9);
-    private int qty;
+    private int quantidade;
     private NomeItemAdicional nome;
 
 
-    public int getQty() {
-        return this.qty;
+    //construtor que será chamado sempre que instanciar a classe ItemIncluso (sempre que der um new)...com isso já forço a ter que passar os paramentros evitando assim a necessidade do set
+    public ItemIncluso(int quantidadeInicial, NomeItemAdicional nomeInicial){
+        this.quantidade = quantidadeInicial;
+        this.nome = nomeInicial;
     }
 
-    public NomeItemAdicional getItemAdicional() {
-        return this.nome;
+
+    public int getQuantidade() {
+        return quantidade;
+    }
+
+    public NomeItemAdicional getNome() {
+        return nome;
     }
 
     public void setQtyeItemAdicional(int novaQuantidade, NomeItemAdicional novoNome) {
         if (novaQuantidade >= 0){
-            this.qty = novaQuantidade;
+            this.quantidade = novaQuantidade;
             this.nome = novoNome;
         }
         else{

@@ -15,7 +15,8 @@ public class Produto {
     private Tamanho tamanho; //passando a variável de tipo string para tipo enum Tamanho
 
     //private String itensInclusos;
-    private List<String> itensInclusos; //Como criar uma lista de Strings
+    //private List<String> itensInclusos; //Como criar uma lista de Strings
+    private List<ItemIncluso> itensInclusos;//criando uma lista de ItemIncluso. Não houve importação pois as classes estão no mesmo package
 
 
 
@@ -74,13 +75,15 @@ public class Produto {
     }
 
 
-    public List<String> getItensInclusos() {
+    public List<ItemIncluso> getItensInclusos() {
         return this.itensInclusos;
     }
 
-    public void setItensInclusos(List<String> novoItemIncluso) {
+    public void setItensInclusos(List<ItemIncluso> novoItemIncluso) {
         this.itensInclusos = novoItemIncluso;
     }
+
+
 
 
 /*################              EXPLICAÇÃO de ENCAPSULAMENTO   #####################################################################
