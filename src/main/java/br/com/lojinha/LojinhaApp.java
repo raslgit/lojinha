@@ -5,6 +5,8 @@ import br.com.lojinha.enums.NomeItemAdicional;
 import br.com.lojinha.enums.Tamanho;
 import br.com.lojinha.pojo.ItemIncluso;
 import br.com.lojinha.pojo.Produto;
+import br.com.lojinha.pojo.ProdutoInternacional;
+import br.com.lojinha.pojo.ProdutoNacional;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -41,9 +43,9 @@ public class LojinhaApp {
         ItemIncluso terceiroItemAdicional = new ItemIncluso(2, NomeItemAdicional.CABOS_DE_ENERGIA);//novamente...
         itensInclusos.add(terceiroItemAdicional);//adicionando o terceiroItemAdicional na lista itensInclusos...item 2
 
+        meuProduto.setItensInclusos(itensInclusos);//agora a lista de itensInclusos foi enviada pra dentro do produto
         System.out.println(itensInclusos);//aqui vem na forma de objeto
 
-        meuProduto.setItensInclusos(itensInclusos);//agora a lista de itensInclusos foi enviada pra dentro do produto
 
         //como imprimir os ietns da lista?
         System.out.println(meuProduto.getItensInclusos().get(0).getQuantidade());
@@ -68,16 +70,22 @@ public class LojinhaApp {
             System.out.println((itemAtual.getNome()));
         }
 
+        //vamos ver se funciona mesmo o lance de heranca
+        ProdutoNacional meuProdutoNacional = new ProdutoNacional("Gradiente", Tamanho.MEDIO);
+        meuProdutoNacional.setImpostoNacional(0.55789);
+        System.out.println(meuProdutoNacional.getImpostoNacional());
+        meuProdutoNacional.setValor(30);
+
+        ProdutoInternacional meuProdutoInternacional  = new ProdutoInternacional("LG", Tamanho.PEQUENO);
+        meuProdutoInternacional.setTaxaDeImportacao(1.13456);
+        System.out.println(meuProdutoInternacional.getTaxaDeImportacao());
+        meuProdutoInternacional.setValor(-100);//usando polimorfismo
+        System.out.println(meuProdutoInternacional.getValor());
 
 
 
-        //System.out.println(meuProduto.getItensInclusos().get(1));//pegando um item especifico da lista
-        //System.out.println(meuProduto.getItensInclusos().size());
 
-        System.out.println(meuProduto.getNome());// não apresenta as caracteristicas...pois ele eh um objeto?
-        System.out.println(meuProduto.getValor());// aqui sim imprime o nome?
-        System.out.println(meuProduto.getMarca());
-        System.out.println(meuProduto.getTamanho());
+
 
 
 
@@ -104,6 +112,16 @@ public class LojinhaApp {
         //itemIncluso.setQtyeItemAdicional(1, NomeItemAdicional.CONTROLES);
         //System.out.print(itemIncluso.getQuantidade() + " ");
         //System.out.println(itemIncluso.getNome());
+
+
+
+        //System.out.println(meuProduto.getItensInclusos().get(1));//pegando um item especifico da lista
+        //System.out.println(meuProduto.getItensInclusos().size());
+
+        //System.out.println(meuProduto.getNome());// não apresenta as caracteristicas...pois ele eh um objeto?
+        //System.out.println(meuProduto.getValor());// aqui sim imprime o nome?
+        //System.out.println(meuProduto.getMarca());
+        //System.out.println(meuProduto.getTamanho());
 
 
 

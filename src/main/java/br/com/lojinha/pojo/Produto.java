@@ -8,9 +8,10 @@ import java.util.List;
 public class Produto {
 
     //atributos - aspectos dos produtos - está logo abaixo da classe (raiz da classe) e não do metodo (que seria uma variavel)
+    //atributo private - atributo somente pode ser alterado pela propria classe
     private String nome;
     private String marca;
-    private double valor;
+    protected double valor;//atributo protected - atributo de uma classe pode ser alterado por uma classe Extendida
     //private String tamanho;
     private Tamanho tamanho; //passando a variável de tipo string para tipo enum Tamanho
     //private String itensInclusos;
